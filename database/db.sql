@@ -1,0 +1,7 @@
+-- table tasks
+CREATE TABLE product (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    description VARCHAR(200) NOT NULL,
+    price INTEGER(1000000) NOT NULL
+);
