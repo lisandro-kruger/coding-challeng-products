@@ -1,15 +1,17 @@
 version: '3.8'
 
 services:
-  db:
-    image: mysql
-    container_name: products
-    restart: always
+  db-products:
+    container_name: db-products
+    image: mysql:8.0.33
+    restart: unless-stopped
     environment:
-      MYSQL_DATABASE: product
+      MYSQL_DATABASE: products
       MYSQL_ROOT_PASSWORD: admin
     ports:
       - 3306:3306
+    expose:
+      - 3306
     volumes:
       - ./db/:/docker-entrypoint-initdb.d/
     

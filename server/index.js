@@ -12,7 +12,7 @@ console.log(__dirname)
 app.use(cors());
 app.use(express.json());
 
-app.use(productsRoutes);
+app.use("/api", productsRoutes);
 
 app.use(express.static(join(__dirname, '../client/dist')))
 

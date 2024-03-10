@@ -3,7 +3,7 @@ import { pool } from "../db.js";
 export const getProducts = async (req, res) => {
   try {
     const [result] = await pool.query(
-      "SELECT * FROM product ORDER BY createAt ASC"
+      "SELECT * FROM product"
     );
     res.json(result);
   } catch (error) {
@@ -30,8 +30,8 @@ export const createProduct = async (req, res) => {
   try {
     const { name, description, image_url, price } = req.body;
     const [result] = await pool.query(
-      "INSERT INTO product(name, description, image_url, price) VALUES (?, ?)",
-      [name, description, image_url, price]
+      "INSERT INTO product(name, description, image_url ,price) VALUES (?, ?, ?, ?)",
+      [title, description, price]
     );
     res.json({
       id: result.insertId,
