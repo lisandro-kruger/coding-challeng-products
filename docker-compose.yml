@@ -1,8 +1,8 @@
 version: '3.8'
 
 services:
-  db-products:
-    container_name: db-products
+  db-product:
+    container_name: db-product
     image: mysql:8.0.33
     restart: unless-stopped
     environment:

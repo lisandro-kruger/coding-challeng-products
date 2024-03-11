@@ -3,9 +3,9 @@ import { pool } from "../db.js";
 export const getProducts = async (req, res) => {
   try {
     const [result] = await pool.query(
-      "SELECT * FROM product"
+      "SELECT * FROM products"
     );
-    res.json(result);
+    res.status(200).json(result);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -13,14 +13,14 @@ export const getProducts = async (req, res) => {
 
 export const getProduct = async (req, res) => {
   try {
-    const [result] = await pool.query("SELECT * FROM product WHERE id = ?", [
+    const [result] = await pool.query("SELECT * FROM products WHERE id = ?", [
       req.params.id,
     ]);
 
     if (result.length === 0)
       return res.status(404).json({ message: "Product not found" });
 
-    res.json(result[0]);
+    res.status(200).json(result[0]);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -30,10 +30,10 @@ export const createProduct = async (req, res) => {
   try {
     const { name, description, image_url, price } = req.body;
     const [result] = await pool.query(
-      "INSERT INTO product(name, description, image_url ,price) VALUES (?, ?, ?, ?)",
-      [title, description, price]
+      "INSERT INTO products (name, description, image_url ,price) VALUES (?, ?, ?, ?)",
+      [name, description, image_url, price]
     );
-    res.json({
+    res.status(201).json({
       id: result.insertId,
       name,
       description,
@@ -47,11 +47,14 @@ export const createProduct = async (req, res) => {
 
 export const updateProduct = async (req, res) => {
   try {
-    const result = await pool.query("UPDATE product SET ? WHERE id = ?", [
+    const result = await pool.query("UPDATE products SET ? WHERE id = ?", [
       req.body,
       req.params.id,
     ]);
-    res.json(result);
+
+    const [updateProduct] = await pool.query("SELECT * FROM products WHERE id = ?", [req.params.id]);
+
+    res.status(201).json(updateProduct);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -59,7 +62,7 @@ export const updateProduct = async (req, res) => {
 
 export const deleteProduct = async (req, res) => {
   try {
-    const [result] = await pool.query("DELETE FROM product WHERE id = ?", [
+    const [result] = await pool.query("DELETE FROM products WHERE id = ?", [
       req.params.id,
     ]);
 

@@ -1,8 +1,6 @@
 import axios from "axios";
 
-export const getProductsRequest = async () => {
-  await axios.get("https://localhost:4000/api/products");
-};
+export const getProductsRequest = () => axios.get("http://localhost:4000/api/products");
 
 /*
 export const createTaskRequest = async (task) =>
