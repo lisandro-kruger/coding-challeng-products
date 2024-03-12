@@ -9,7 +9,11 @@ const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 console.log(__dirname)
 
-app.use(cors());
+app.use(
+    cors({
+      origin: FRONTEND_URL,
+    })
+  );
 app.use(express.json());
 
 app.use("/api", productsRoutes);
