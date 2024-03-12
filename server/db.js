@@ -1,17 +1,13 @@
-import {Pool} from "pg";
-
+import { createPool } from 'mysql2/promise'
 import {
   DB_DATABASE,
   DB_HOST,
   DB_PASSWORD,
   DB_PORT,
-  DB_USER,
-  FRONTEND_URL,
-  PORT,
+  DB_USER
 } from "./config.js";
 
-const app = express();
-const pool = new Pool({
+export const pool = createPool({
   host: DB_HOST,
   database: DB_DATABASE,
   user: DB_USER,
