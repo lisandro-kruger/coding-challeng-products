@@ -1,4 +1,4 @@
-import pg from "pg";
+import {Pool} from "pg";
 
 import {
   DB_DATABASE,
@@ -11,7 +11,7 @@ import {
 } from "./config.js";
 
 const app = express();
-const pool = new pg.Pool({
+const pool = new Pool({
   host: DB_HOST,
   database: DB_DATABASE,
   user: DB_USER,
