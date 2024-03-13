@@ -30,7 +30,7 @@ export const createProduct = async (req, res) => {
   try {
     const { name, description, image_url, price} = req.body;
     const [result] = await pool.query(
-      "INSERT INTO products(name, description, image_url, price) VALUES (?, ?, ?, ?)",
+      "INSERT INTO products (name, description, image_url, price) VALUES (?, ?, ?, ?)",
       [name, description, image_url, price]
     );
     res.status(201).json({

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getProductsRequest = () => axios.get("http://localhost:4000/api/products");
+export const getProductsRequest = () => axios.get("https://coding-challeng-products-tosw.onrender.com/api/products");
 
 /*
 export const createTaskRequest = async (task) =>
