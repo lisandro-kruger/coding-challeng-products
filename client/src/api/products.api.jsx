@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getProductsRequest = () => axios.get(VITE_BACKEND_URL);
+export const getProductsRequest = () => axios.get("https://coding-challeng-products-guvy.onrender.com/api/products");
 
 /*
 export const createTaskRequest = async (task) =>
