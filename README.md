@@ -63,11 +63,13 @@ npm run dev
 
 ## Proyecto en línea
 
+### DATABASE
+
+Se creó una base de datos en Railway de MySQL para probar la funcionalidad de la API. Se agregaron algunos datos a esta base de datos para probar el funcionamiento de la API.
+
 ### Backend
 
 El backend del proyecto está alojado en [este enlace](https://coding-challeng-products-guvy.onrender.com/api/products). Actualmente, el backend solo permite obtener la lista de productos. Aunque se intentó implementar la creación, actualización y eliminación de productos a través de esta URL, no se logró completar esta funcionalidad.
-
-Se creó una base de datos en Railway de MySQL para probar la funcionalidad de la API. Se agregaron algunos datos a esta base de datos para probar el funcionamiento de la API.
 
 ### Frontend
 
