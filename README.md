@@ -4,6 +4,10 @@ Este proyecto es una aplicación de comercio electrónico construida con Node.js
 
 ## Funcionalidades
 
+### DATABASE
+
+Cree un archivo docker-compose para trabajar con una base de datos de manera local.
+
 ### Backend
 
 El backend de la aplicación está construido con Node.js y Express. Utiliza las siguientes librerías:
@@ -38,8 +42,9 @@ DELETE /products/:id: Elimina un producto específico por su ID.
 
 El frontend de la aplicación está construido con React y utiliza las siguientes librerías:
 
-“axios”: “^1.6.7”
-“react-router-dom”: “^6.22.3”
+- “axios”: “^1.6.7”
+- “react-router-dom”: “^6.22.3”
+
 La funcionalidad principal del frontend es mostrar los productos que expone la API en el backend. Se utiliza Vite como empaquetador. La aplicación carga una lista de productos desde el backend y muestra todos los productos disponibles. Al hacer clic en un producto, el usuario puede ver una vista de detalle de ese producto.
 
 ### Cómo levantar el proyecto en local
