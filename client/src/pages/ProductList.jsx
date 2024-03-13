@@ -11,7 +11,7 @@ function ProductPage() {
 
     function renderMain(){
         if(products.length === 0) {
-            return <h1>No Products yet</h1>
+            return <h1 className="text-4xl text-white" >No Products yet</h1>
         }
 
         return products.map((product) => <ProductCard product={product} key={product.id} />);
